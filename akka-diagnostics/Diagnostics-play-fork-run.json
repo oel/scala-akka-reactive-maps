@@ -1,0 +1,200 @@
+{
+  "start-time" : "2016-03-26T23:37:10.981",
+  "akka-version" : "2.3.0.bin-rp-15v09p03",
+  "classpath" : "/Users/leo/.ivy2/cache/com.typesafe.play/fork-run_2.11/jars/fork-run_2.11-2.4.2-bin-rp-15v09p03.jar:/Users/leo/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.7-bin-rp-15v09p03.jar:/Users/leo/.ivy2/cache/com.typesafe.play/fork-run-protocol_2.11/jars/fork-run-protocol_2.11-2.4.2-bin-rp-15v09p03.jar:/Users/leo/.ivy2/cache/com.typesafe.play/run-support_2.11/jars/run-support_2.11-2.4.2-bin-rp-15v09p03.jar:/Users/leo/.ivy2/cache/com.typesafe.play/build-link/jars/build-link-2.4.2-bin-rp-15v09p03.jar:/Users/leo/.ivy2/cache/com.typesafe.play/play-exceptions/jars/play-exceptions-2.4.2-bin-rp-15v09p03.jar:/Users/leo/apps/activator/repository/org.javassist/javassist/3.19.0-GA/bundles/javassist.jar:/Users/leo/.ivy2/cache/com.typesafe.sbtrc/client-2-11/jars/client-2-11-0.3.1.jar:/Users/leo/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.11.7-bin-rp-15v09p03.jar:/Users/leo/.ivy2/cache/org.scala-sbt/serialization_2.11/jars/serialization_2.11-0.1.0.jar:/Users/leo/.ivy2/cache/org.scala-lang.modules/scala-pickling_2.11/jars/scala-pickling_2.11-0.10.0.jar:/Users/leo/.ivy2/cache/org.scala-lang/scala-compiler/jars/scala-compiler-2.11.7-bin-rp-15v09p03.jar:/Users/leo/.ivy2/cache/org.scala-lang.modules/scala-xml_2.11/bundles/scala-xml_2.11-1.0.4-bin-rp-15v09p03.jar:/Users/leo/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.11/bundles/scala-parser-combinators_2.11-1.0.4-bin-rp-15v09p03.jar:/Users/leo/.ivy2/cache/org.json4s/json4s-core_2.11/jars/json4s-core_2.11-3.2.10.jar:/Users/leo/.ivy2/cache/org.json4s/json4s-ast_2.11/jars/json4s-ast_2.11-3.2.10.jar:/Users/leo/.ivy2/cache/com.thoughtworks.paranamer/paranamer/jars/paranamer-2.6.jar:/Users/leo/.ivy2/cache/org.spire-math/jawn-parser_2.11/jars/jawn-parser_2.11-0.6.0.jar:/Users/leo/.ivy2/cache/org.spire-math/json4s-support_2.11/jars/json4s-support_2.11-0.6.0.jar:/Users/leo/.ivy2/cache/org.scala-sbt/launcher-interface/jars/launcher-interface-0.13.8-M3.jar:/Users/leo/.ivy2/cache/org.scala-sbt/interface/jars/interface-0.13.8-M3.jar:/Users/leo/.ivy2/cache/org.scala-sbt/io_2.11/jars/io_2.11-0.13.8-M3.jar:/Users/leo/.ivy2/cache/org.scala-sbt/control_2.11/jars/control_2.11-0.13.8-M3.jar:/Users/leo/.ivy2/cache/org.scala-sbt/collections_2.11/jars/collections_2.11-0.13.8-M3.jar:/Users/leo/.ivy2/cache/com.typesafe.sbtrc/actor-client-2-11/jars/actor-client-2-11-0.3.1.jar:/Users/leo/.ivy2/cache/com.typesafe.akka/akka-actor_2.11/jars/akka-actor_2.11-2.3-bin-rp-15v09p03.jar:/Users/leo/.ivy2/cache/com.typesafe/config/bundles/config-1.2.1.jar:/Users/leo/.ivy2/cache/com.typesafe.akka/akka-testkit_2.11/jars/akka-testkit_2.11-2.3-bin-rp-15v09p03.jar:/Users/leo/.ivy2/cache/net.contentobjects.jnotify/jnotify/jars/jnotify-0.94-play-1.jar",
+  "configuration-warnings" : [],
+  "system-metrics" : {
+    "heap-init" : 134217728,
+    "heap-max" : 1908932608,
+    "heap-used" : 44489536,
+    "heap-committed" : 116916224,
+    "os-processors" : 8,
+    "mem-pool-0" : {
+      "name" : "Code Cache",
+      "type" : "Non-heap memory",
+      "init" : 2555904,
+      "max" : 251658240,
+      "used" : 7214016,
+      "committed" : 7274496
+    },
+    "mem-pool-1" : {
+      "name" : "Metaspace",
+      "type" : "Non-heap memory",
+      "init" : 0,
+      "max" : -1,
+      "used" : 28448192,
+      "committed" : 28753920
+    },
+    "mem-pool-2" : {
+      "name" : "Compressed Class Space",
+      "type" : "Non-heap memory",
+      "init" : 0,
+      "max" : 1073741824,
+      "used" : 4238336,
+      "committed" : 4374528
+    },
+    "mem-pool-3" : {
+      "name" : "PS Eden Space",
+      "type" : "Heap memory",
+      "init" : 34078720,
+      "max" : 705167360,
+      "used" : 32604552,
+      "committed" : 52953088
+    },
+    "mem-pool-4" : {
+      "name" : "PS Survivor Space",
+      "type" : "Heap memory",
+      "init" : 5242880,
+      "max" : 5242880,
+      "used" : 5229016,
+      "committed" : 5242880
+    },
+    "mem-pool-5" : {
+      "name" : "PS Old Gen",
+      "type" : "Heap memory",
+      "init" : 89653248,
+      "max" : 1431830528,
+      "used" : 6655968,
+      "committed" : 58720256
+    }
+  },
+  "configuration" : {
+    "akka" : {
+        "loglevel" : "OFF",
+        "stdout-loglevel" : "OFF"
+    },
+    "awt" : {
+        "toolkit" : "sun.lwawt.macosx.LWCToolkit"
+    },
+    "excluded-sensitive-paths" : [
+        "user.home",
+        "ftp.nonProxyHosts",
+        "user.dir",
+        "http.nonProxyHosts",
+        "socksNonProxyHosts",
+        "user.name"
+    ],
+    "file" : {
+        "encoding" : {
+            "pkg" : "sun.io"
+        },
+        "separator" : "/"
+    },
+    "fork" : {
+        "run" : {
+            "log" : {
+                "events" : "true",
+                "level" : "info"
+            }
+        }
+    },
+    "ftp" : {},
+    "gopherProxySet" : "false",
+    "http" : {},
+    "java" : {
+        "awt" : {
+            "graphicsenv" : "sun.awt.CGraphicsEnvironment",
+            "printerjob" : "sun.lwawt.macosx.CPrinterJob"
+        },
+        "class" : {
+            "path" : "/Users/leo/.ivy2/cache/com.typesafe.play/fork-run_2.11/jars/fork-run_2.11-2.4.2-bin-rp-15v09p03.jar:/Users/leo/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.7-bin-rp-15v09p03.jar:/Users/leo/.ivy2/cache/com.typesafe.play/fork-run-protocol_2.11/jars/fork-run-protocol_2.11-2.4.2-bin-rp-15v09p03.jar:/Users/leo/.ivy2/cache/com.typesafe.play/run-support_2.11/jars/run-support_2.11-2.4.2-bin-rp-15v09p03.jar:/Users/leo/.ivy2/cache/com.typesafe.play/build-link/jars/build-link-2.4.2-bin-rp-15v09p03.jar:/Users/leo/.ivy2/cache/com.typesafe.play/play-exceptions/jars/play-exceptions-2.4.2-bin-rp-15v09p03.jar:/Users/leo/apps/activator/repository/org.javassist/javassist/3.19.0-GA/bundles/javassist.jar:/Users/leo/.ivy2/cache/com.typesafe.sbtrc/client-2-11/jars/client-2-11-0.3.1.jar:/Users/leo/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.11.7-bin-rp-15v09p03.jar:/Users/leo/.ivy2/cache/org.scala-sbt/serialization_2.11/jars/serialization_2.11-0.1.0.jar:/Users/leo/.ivy2/cache/org.scala-lang.modules/scala-pickling_2.11/jars/scala-pickling_2.11-0.10.0.jar:/Users/leo/.ivy2/cache/org.scala-lang/scala-compiler/jars/scala-compiler-2.11.7-bin-rp-15v09p03.jar:/Users/leo/.ivy2/cache/org.scala-lang.modules/scala-xml_2.11/bundles/scala-xml_2.11-1.0.4-bin-rp-15v09p03.jar:/Users/leo/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.11/bundles/scala-parser-combinators_2.11-1.0.4-bin-rp-15v09p03.jar:/Users/leo/.ivy2/cache/org.json4s/json4s-core_2.11/jars/json4s-core_2.11-3.2.10.jar:/Users/leo/.ivy2/cache/org.json4s/json4s-ast_2.11/jars/json4s-ast_2.11-3.2.10.jar:/Users/leo/.ivy2/cache/com.thoughtworks.paranamer/paranamer/jars/paranamer-2.6.jar:/Users/leo/.ivy2/cache/org.spire-math/jawn-parser_2.11/jars/jawn-parser_2.11-0.6.0.jar:/Users/leo/.ivy2/cache/org.spire-math/json4s-support_2.11/jars/json4s-support_2.11-0.6.0.jar:/Users/leo/.ivy2/cache/org.scala-sbt/launcher-interface/jars/launcher-interface-0.13.8-M3.jar:/Users/leo/.ivy2/cache/org.scala-sbt/interface/jars/interface-0.13.8-M3.jar:/Users/leo/.ivy2/cache/org.scala-sbt/io_2.11/jars/io_2.11-0.13.8-M3.jar:/Users/leo/.ivy2/cache/org.scala-sbt/control_2.11/jars/control_2.11-0.13.8-M3.jar:/Users/leo/.ivy2/cache/org.scala-sbt/collections_2.11/jars/collections_2.11-0.13.8-M3.jar:/Users/leo/.ivy2/cache/com.typesafe.sbtrc/actor-client-2-11/jars/actor-client-2-11-0.3.1.jar:/Users/leo/.ivy2/cache/com.typesafe.akka/akka-actor_2.11/jars/akka-actor_2.11-2.3-bin-rp-15v09p03.jar:/Users/leo/.ivy2/cache/com.typesafe/config/bundles/config-1.2.1.jar:/Users/leo/.ivy2/cache/com.typesafe.akka/akka-testkit_2.11/jars/akka-testkit_2.11-2.3-bin-rp-15v09p03.jar:/Users/leo/.ivy2/cache/net.contentobjects.jnotify/jnotify/jars/jnotify-0.94-play-1.jar",
+            "version" : "52.0"
+        },
+        "endorsed" : {
+            "dirs" : "/Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home/jre/lib/endorsed"
+        },
+        "ext" : {
+            "dirs" : "/Users/leo/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"
+        },
+        "home" : "/Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home/jre",
+        "io" : {
+            "tmpdir" : "/var/folders/8_/br2l310d1zz36zcf839kxd8h0000gn/T/"
+        },
+        "library" : {
+            "path" : "/Users/leo/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."
+        },
+        "runtime" : {
+            "name" : "Java(TM) SE Runtime Environment",
+            "version" : "1.8.0_66-b17"
+        },
+        "specification" : {
+            "name" : "Java Platform API Specification",
+            "vendor" : "Oracle Corporation",
+            "version" : "1.8"
+        },
+        "vendor" : {
+            "url" : {
+                "bug" : "http://bugreport.sun.com/bugreport/"
+            }
+        },
+        "version" : "1.8.0_66",
+        "vm" : {
+            "info" : "mixed mode",
+            "name" : "Java HotSpot(TM) 64-Bit Server VM",
+            "specification" : {
+                "name" : "Java Virtual Machine Specification",
+                "vendor" : "Oracle Corporation",
+                "version" : "1.8"
+            },
+            "vendor" : "Oracle Corporation",
+            "version" : "25.66-b17"
+        }
+    },
+    "line" : {
+        "separator" : "\n"
+    },
+    "os" : {
+        "arch" : "x86_64",
+        "name" : "Mac OS X",
+        "version" : "10.7.5"
+    },
+    "path" : {
+        "separator" : ":"
+    },
+    "sun" : {
+        "arch" : {
+            "data" : {
+                "model" : "64"
+            }
+        },
+        "boot" : {
+            "class" : {
+                "path" : "/Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home/jre/classes"
+            },
+            "library" : {
+                "path" : "/Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home/jre/lib"
+            }
+        },
+        "cpu" : {
+            "endian" : "little",
+            "isalist" : ""
+        },
+        "io" : {
+            "unicode" : {
+                "encoding" : "UnicodeBig"
+            }
+        },
+        "java" : {
+            "command" : "play.forkrun.ForkRun /Users/leo/apps/play/reactive-maps-shard root/playForkConfig",
+            "launcher" : "SUN_STANDARD"
+        },
+        "jnu" : {
+            "encoding" : "UTF-8"
+        },
+        "management" : {
+            "compiler" : "HotSpot 64-Bit Tiered Compilers"
+        },
+        "os" : {
+            "patch" : {
+                "level" : "unknown"
+            }
+        }
+    },
+    "user" : {
+        "country" : "US",
+        "language" : "en",
+        "timezone" : ""
+    }
+}
+}
+

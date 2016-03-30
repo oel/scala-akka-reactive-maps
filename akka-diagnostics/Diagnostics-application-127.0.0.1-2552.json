@@ -1,0 +1,395 @@
+{
+  "start-time" : "2016-03-26T23:37:42.056",
+  "akka-version" : "2.3.0.bin-rp-15v09p03",
+  "classpath" : "/Users/leo/apps/play/reactive-maps-shard/target/scala-2.11/classes/",
+  "configuration-warnings" : [
+    {
+      "checker-key" : "jvm-exit-on-fatal-error",
+      "message" : "Don't use jvm-exit-on-fatal-error=off. It's safer to shutdown the JVM in case of a fatal error, such as OutOfMemoryError.",
+      "properties" : "akka.jvm-exit-on-fatal-error = off",
+      "defaults" : "akka.jvm-exit-on-fatal-error = on"
+    },
+    {
+      "checker-key" : "auto-down",
+      "message" : "Use Akka Split Brain Resolver instead of auto-down, since auto-down may cause the cluster to be split into two separate disconnected clusters when there are network partitions, long garbage collection pauses or system overload. This is especially important if you use Cluster Singleton, Cluster Sharding, or Persistence.",
+      "properties" : "akka.cluster.auto-down = on",
+      "defaults" : "akka.cluster.auto-down = off"
+    },
+    {
+      "checker-key" : "dispatcher-count",
+      "message" : "You have configured [9] different custom dispatchers. Do you really need that many dispatchers. Separating into CPU bound tasks and blocking (IO) tasks are often enough.",
+      "properties" : "remote.backoff-remote-dispatcher, stream.default-file-io-dispatcher, actor.default-dispatcher, persistence.dispatchers.default-stream-dispatcher, diagnostics.recorder.dispatcher, io.pinned-dispatcher, remote.default-remote-dispatcher, persistence.dispatchers.default-replay-dispatcher, persistence.dispatchers.default-plugin-dispatcher",
+      "defaults" : ""
+    },
+    {
+      "checker-key" : "power-user-settings",
+      "message" : "akka.actor.default-dispatcher.fork-join-executor.task-peeking-mode is an advanced configuration setting. Make sure that you fully understand the implications of changing the default value. You can confirm that you know the meaning of this configuration setting by adding [akka.actor.default-dispatcher.fork-join-executor.task-peeking-mode] to configuration string list akka.diagnostics.checker.confirmed-power-user-settings.",
+      "properties" : "akka.actor.default-dispatcher.fork-join-executor.task-peeking-mode = LIFO",
+      "defaults" : "akka.actor.default-dispatcher.fork-join-executor.task-peeking-mode = FIFO"
+    },
+    {
+      "checker-key" : "power-user-settings",
+      "message" : "akka.remote.netty.udp.hostname is an advanced configuration setting. Make sure that you fully understand the implications of changing the default value. You can confirm that you know the meaning of this configuration setting by adding [akka.remote.netty.udp.hostname] to configuration string list akka.diagnostics.checker.confirmed-power-user-settings.",
+      "properties" : "akka.remote.netty.udp.hostname = 127.0.0.1",
+      "defaults" : "akka.remote.netty.udp.hostname = "
+    }],
+  "system-metrics" : {
+    "heap-init" : 134217728,
+    "heap-max" : 1908932608,
+    "heap-used" : 26511104,
+    "heap-committed" : 268435456,
+    "os-processors" : 8,
+    "mem-pool-0" : {
+      "name" : "Code Cache",
+      "type" : "Non-heap memory",
+      "init" : 2555904,
+      "max" : 251658240,
+      "used" : 13521216,
+      "committed" : 14024704
+    },
+    "mem-pool-1" : {
+      "name" : "Metaspace",
+      "type" : "Non-heap memory",
+      "init" : 0,
+      "max" : -1,
+      "used" : 59870376,
+      "committed" : 60973056
+    },
+    "mem-pool-2" : {
+      "name" : "Compressed Class Space",
+      "type" : "Non-heap memory",
+      "init" : 0,
+      "max" : 1073741824,
+      "used" : 8912832,
+      "committed" : 9216000
+    },
+    "mem-pool-3" : {
+      "name" : "PS Eden Space",
+      "type" : "Heap memory",
+      "init" : 34078720,
+      "max" : 685768704,
+      "used" : 9318936,
+      "committed" : 139460608
+    },
+    "mem-pool-4" : {
+      "name" : "PS Survivor Space",
+      "type" : "Heap memory",
+      "init" : 5242880,
+      "max" : 15204352,
+      "used" : 0,
+      "committed" : 15204352
+    },
+    "mem-pool-5" : {
+      "name" : "PS Old Gen",
+      "type" : "Heap memory",
+      "init" : 89653248,
+      "max" : 1431830528,
+      "used" : 17192168,
+      "committed" : 113770496
+    }
+  },
+  "configuration" : {
+    "actor" : {
+        "default-dispatcher" : {
+            "fork-join-executor" : {
+                "parallelism-factor" : 1,
+                "parallelism-max" : 24,
+                "task-peeking-mode" : "LIFO"
+            }
+        },
+        "deployment" : {
+            "/regionManager/router" : {
+                "cluster" : {
+                    "allow-local-routees" : "on",
+                    "enabled" : "on",
+                    "routees-path" : "/user/regionManager",
+                    "use-role" : "backend-summary"
+                },
+                "nr-of-instances" : 1000,
+                "router" : "consistent-hashing"
+            },
+            "/regionManagerClient/router" : {
+                "cluster" : {
+                    "allow-local-routees" : "on",
+                    "enabled" : "on",
+                    "routees-path" : "/user/regionManager",
+                    "use-role" : "backend-region"
+                },
+                "nr-of-instances" : 1000,
+                "router" : "consistent-hashing"
+            }
+        },
+        "provider" : "akka.cluster.ClusterActorRefProvider"
+    },
+    "akka" : {
+        "actor" : {
+            "default-dispatcher" : {
+                "fork-join-executor" : {
+                    "parallelism-factor" : 1,
+                    "parallelism-max" : 24,
+                    "task-peeking-mode" : "LIFO"
+                }
+            },
+            "deployment" : {
+                "/regionManager/router" : {
+                    "cluster" : {
+                        "allow-local-routees" : "on",
+                        "enabled" : "on",
+                        "routees-path" : "/user/regionManager",
+                        "use-role" : "backend-summary"
+                    },
+                    "nr-of-instances" : 1000,
+                    "router" : "consistent-hashing"
+                },
+                "/regionManagerClient/router" : {
+                    "cluster" : {
+                        "allow-local-routees" : "on",
+                        "enabled" : "on",
+                        "routees-path" : "/user/regionManager",
+                        "use-role" : "backend-region"
+                    },
+                    "nr-of-instances" : 1000,
+                    "router" : "consistent-hashing"
+                }
+            },
+            "provider" : "akka.cluster.ClusterActorRefProvider"
+        },
+        "cluster" : {
+            "auto-down" : "on",
+            "roles" : [
+                "frontend",
+                "backend-region",
+                "backend-summary"
+            ],
+            "seed-nodes" : [
+                "akka.tcp://application@127.0.0.1:2552"
+            ]
+        },
+        "extensions" : [
+            "akka.contrib.pattern.DistributedPubSubExtension"
+        ],
+        "jvm-exit-on-fatal-error" : "off",
+        "loglevel" : "INFO",
+        "remote" : {
+            "netty" : {
+                "ssl" : {
+                    "hostname" : "127.0.0.1",
+                    "port" : 2552
+                },
+                "tcp" : {
+                    "hostname" : "127.0.0.1",
+                    "port" : 2552
+                },
+                "udp" : {
+                    "hostname" : "127.0.0.1",
+                    "port" : 2552
+                }
+            }
+        }
+    },
+    "awt" : {
+        "toolkit" : "sun.lwawt.macosx.LWCToolkit"
+    },
+    "cluster" : {
+        "auto-down" : "on",
+        "roles" : [
+            "frontend",
+            "backend-region",
+            "backend-summary"
+        ],
+        "seed-nodes" : [
+            "akka.tcp://application@127.0.0.1:2552"
+        ]
+    },
+    "excluded-sensitive-paths" : [
+        "user.home",
+        "ftp.nonProxyHosts",
+        "user.dir",
+        "http.nonProxyHosts",
+        "socksNonProxyHosts",
+        "user.name"
+    ],
+    "extensions" : [
+        "akka.contrib.pattern.DistributedPubSubExtension"
+    ],
+    "file" : {
+        "encoding" : {
+            "pkg" : "sun.io"
+        },
+        "separator" : "/"
+    },
+    "fork" : {
+        "run" : {
+            "log" : {
+                "events" : "true",
+                "level" : "info"
+            }
+        }
+    },
+    "ftp" : {},
+    "gopherProxySet" : "false",
+    "http" : {},
+    "java" : {
+        "awt" : {
+            "graphicsenv" : "sun.awt.CGraphicsEnvironment",
+            "printerjob" : "sun.lwawt.macosx.CPrinterJob"
+        },
+        "class" : {
+            "path" : "/Users/leo/.ivy2/cache/com.typesafe.play/fork-run_2.11/jars/fork-run_2.11-2.4.2-bin-rp-15v09p03.jar:/Users/leo/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.7-bin-rp-15v09p03.jar:/Users/leo/.ivy2/cache/com.typesafe.play/fork-run-protocol_2.11/jars/fork-run-protocol_2.11-2.4.2-bin-rp-15v09p03.jar:/Users/leo/.ivy2/cache/com.typesafe.play/run-support_2.11/jars/run-support_2.11-2.4.2-bin-rp-15v09p03.jar:/Users/leo/.ivy2/cache/com.typesafe.play/build-link/jars/build-link-2.4.2-bin-rp-15v09p03.jar:/Users/leo/.ivy2/cache/com.typesafe.play/play-exceptions/jars/play-exceptions-2.4.2-bin-rp-15v09p03.jar:/Users/leo/apps/activator/repository/org.javassist/javassist/3.19.0-GA/bundles/javassist.jar:/Users/leo/.ivy2/cache/com.typesafe.sbtrc/client-2-11/jars/client-2-11-0.3.1.jar:/Users/leo/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.11.7-bin-rp-15v09p03.jar:/Users/leo/.ivy2/cache/org.scala-sbt/serialization_2.11/jars/serialization_2.11-0.1.0.jar:/Users/leo/.ivy2/cache/org.scala-lang.modules/scala-pickling_2.11/jars/scala-pickling_2.11-0.10.0.jar:/Users/leo/.ivy2/cache/org.scala-lang/scala-compiler/jars/scala-compiler-2.11.7-bin-rp-15v09p03.jar:/Users/leo/.ivy2/cache/org.scala-lang.modules/scala-xml_2.11/bundles/scala-xml_2.11-1.0.4-bin-rp-15v09p03.jar:/Users/leo/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.11/bundles/scala-parser-combinators_2.11-1.0.4-bin-rp-15v09p03.jar:/Users/leo/.ivy2/cache/org.json4s/json4s-core_2.11/jars/json4s-core_2.11-3.2.10.jar:/Users/leo/.ivy2/cache/org.json4s/json4s-ast_2.11/jars/json4s-ast_2.11-3.2.10.jar:/Users/leo/.ivy2/cache/com.thoughtworks.paranamer/paranamer/jars/paranamer-2.6.jar:/Users/leo/.ivy2/cache/org.spire-math/jawn-parser_2.11/jars/jawn-parser_2.11-0.6.0.jar:/Users/leo/.ivy2/cache/org.spire-math/json4s-support_2.11/jars/json4s-support_2.11-0.6.0.jar:/Users/leo/.ivy2/cache/org.scala-sbt/launcher-interface/jars/launcher-interface-0.13.8-M3.jar:/Users/leo/.ivy2/cache/org.scala-sbt/interface/jars/interface-0.13.8-M3.jar:/Users/leo/.ivy2/cache/org.scala-sbt/io_2.11/jars/io_2.11-0.13.8-M3.jar:/Users/leo/.ivy2/cache/org.scala-sbt/control_2.11/jars/control_2.11-0.13.8-M3.jar:/Users/leo/.ivy2/cache/org.scala-sbt/collections_2.11/jars/collections_2.11-0.13.8-M3.jar:/Users/leo/.ivy2/cache/com.typesafe.sbtrc/actor-client-2-11/jars/actor-client-2-11-0.3.1.jar:/Users/leo/.ivy2/cache/com.typesafe.akka/akka-actor_2.11/jars/akka-actor_2.11-2.3-bin-rp-15v09p03.jar:/Users/leo/.ivy2/cache/com.typesafe/config/bundles/config-1.2.1.jar:/Users/leo/.ivy2/cache/com.typesafe.akka/akka-testkit_2.11/jars/akka-testkit_2.11-2.3-bin-rp-15v09p03.jar:/Users/leo/.ivy2/cache/net.contentobjects.jnotify/jnotify/jars/jnotify-0.94-play-1.jar",
+            "version" : "52.0"
+        },
+        "endorsed" : {
+            "dirs" : "/Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home/jre/lib/endorsed"
+        },
+        "ext" : {
+            "dirs" : "/Users/leo/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"
+        },
+        "home" : "/Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home/jre",
+        "io" : {
+            "tmpdir" : "/var/folders/8_/br2l310d1zz36zcf839kxd8h0000gn/T/"
+        },
+        "library" : {
+            "path" : "/Users/leo/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.:/Users/leo/apps/play/reactive-maps-shard/target/native_libraries/64bits"
+        },
+        "runtime" : {
+            "name" : "Java(TM) SE Runtime Environment",
+            "version" : "1.8.0_66-b17"
+        },
+        "specification" : {
+            "name" : "Java Platform API Specification",
+            "vendor" : "Oracle Corporation",
+            "version" : "1.8"
+        },
+        "vendor" : {
+            "url" : {
+                "bug" : "http://bugreport.sun.com/bugreport/"
+            }
+        },
+        "version" : "1.8.0_66",
+        "vm" : {
+            "info" : "mixed mode",
+            "name" : "Java HotSpot(TM) 64-Bit Server VM",
+            "specification" : {
+                "name" : "Java Virtual Machine Specification",
+                "vendor" : "Oracle Corporation",
+                "version" : "1.8"
+            },
+            "vendor" : "Oracle Corporation",
+            "version" : "25.66-b17"
+        }
+    },
+    "jvm-exit-on-fatal-error" : "off",
+    "line" : {
+        "separator" : "\n"
+    },
+    "loglevel" : "INFO",
+    "os" : {
+        "arch" : "x86_64",
+        "name" : "Mac OS X",
+        "version" : "10.7.5"
+    },
+    "path" : {
+        "separator" : ":"
+    },
+    "play" : {
+        "application" : {
+            "loader" : "com.typesafe.conductr.bundlelib.play.ConductRApplicationLoader"
+        },
+        "crypto" : {
+            "secret" : "]I;nuZEPTPGytF5U/970v=FAxlxl5SHqfos=]C??:lG>:d;i13LFWp8rc5a`]j2c"
+        },
+        "i18n" : {
+            "langs" : [
+                "en"
+            ]
+        },
+        "modules" : {
+            "enabled" : [
+                "play.api.libs.ws.ning.NingWSModule",
+                "play.api.libs.openid.OpenIDModule",
+                "play.api.inject.BuiltinModule",
+                "play.api.i18n.I18nModule",
+                "actors.Actors",
+                "com.typesafe.conductr.bundlelib.play.ConductRLifecycleModule"
+            ]
+        },
+        "server" : {
+            "dir" : "/Users/leo/apps/play/reactive-maps-shard"
+        }
+    },
+    "reactiveMaps" : {
+        "bots" : {
+            "enabled" : true,
+            "totalNumberOfBots" : 75
+        },
+        "clusterDimension" : 4,
+        "clusterThreshold" : 16,
+        "expiryInterval" : "30s",
+        "maxSubscriptionRegions" : 6,
+        "maxZoomDepth" : 14,
+        "subscriberBatchInterval" : "2s",
+        "summaryInterval" : "5s"
+    },
+    "remote" : {
+        "netty" : {
+            "ssl" : {
+                "hostname" : "127.0.0.1",
+                "port" : 2552
+            },
+            "tcp" : {
+                "hostname" : "127.0.0.1",
+                "port" : 2552
+            },
+            "udp" : {
+                "hostname" : "127.0.0.1",
+                "port" : 2552
+            }
+        }
+    },
+    "sun" : {
+        "arch" : {
+            "data" : {
+                "model" : "64"
+            }
+        },
+        "boot" : {
+            "class" : {
+                "path" : "/Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home/jre/classes"
+            },
+            "library" : {
+                "path" : "/Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home/jre/lib"
+            }
+        },
+        "cpu" : {
+            "endian" : "little",
+            "isalist" : ""
+        },
+        "io" : {
+            "unicode" : {
+                "encoding" : "UnicodeBig"
+            }
+        },
+        "java" : {
+            "command" : "play.forkrun.ForkRun /Users/leo/apps/play/reactive-maps-shard root/playForkConfig",
+            "launcher" : "SUN_STANDARD"
+        },
+        "jnu" : {
+            "encoding" : "UTF-8"
+        },
+        "management" : {
+            "compiler" : "HotSpot 64-Bit Tiered Compilers"
+        },
+        "os" : {
+            "patch" : {
+                "level" : "unknown"
+            }
+        }
+    },
+    "user" : {
+        "country" : "US",
+        "language" : "en",
+        "timezone" : "America/Los_Angeles"
+    }
+}
+}
+
