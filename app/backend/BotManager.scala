@@ -57,8 +57,8 @@ class BotManager(regionManagerClient: ActorRef, userMetaData: ActorRef, data: Se
                     if (originalTrail) (0.0, 0.0)
                     else (ThreadLocalRandom.current.nextDouble() * 15.0,
                       ThreadLocalRandom.current.nextDouble() * -30.0)
-                    context.actorOf(GeoJsonBot.props(route, offset, userId,
-                      regionManagerClient, userMetaData))
+                  context.actorOf(GeoJsonBot.props(route, offset, userId,
+                    regionManagerClient, userMetaData))
                 case other =>
               }
             })
